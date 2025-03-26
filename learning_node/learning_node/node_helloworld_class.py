@@ -13,9 +13,9 @@ import time
 """
 创建一个HelloWorld节点, 初始化时输出“hello world”日志
 """
-class HelloWorldNode(Node):
-    def __init__(self, name):
-        super().__init__(name)                       # ROS2节点父类初始化
+class HelloWorldNode(Node):                          # 定义名为HelloWorldNode的类，继承自rclpy.node.Node；通过继承可以复用父类的方法
+    def __init__(self, name):                        # 类的构造函数，创建节点实例时自动调用
+        super().__init__(name)                       # 显式调用父类Node的构造函数；确保父类完成必要的初始化工作————ROS2节点父类初始化
         while rclpy.ok():                            # ROS2系统是否正常运行
             self.get_logger().info("Hello World")    # ROS2日志输出
             time.sleep(0.5)                          # 休眠控制循环时间
