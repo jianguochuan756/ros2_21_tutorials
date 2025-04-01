@@ -13,12 +13,25 @@ def generate_launch_description():      # 自动生成launch文件的函数
       'turtle_rviz.rviz'
       )
 
+
+#终端运行“ ros2 run rviz2 rviz2 ”
    return LaunchDescription([           # 返回launch文件的描述信息
       Node(                             # 配置一个节点的启动
          package='rviz2',               # 节点所在的功能包
          executable='rviz2',            # 节点的可执行文件名
-         name='rviz2',                  # 对节点重新命名
+         name='rviz2',                  # 对节点重新命名----即使节点名改为“rviz2”而不是“rviz.launch.py”
          arguments=['-d', rviz_config]  # 加载命令行参数
       )
    ])
 
+#def generate_launch_description():             # 自动生成launch文件的函数
+#    return LaunchDescription([                 # 返回launch文件的描述信息
+#        Node(                                  # 配置一个节点的启动
+#            package='learning_topic',          # 节点所在的功能包
+#            executable='topic_helloworld_pub', # 节点的可执行文件
+#        ),
+#        Node(                                  # 配置一个节点的启动
+#            package='learning_topic',          # 节点所在的功能包
+#            executable='topic_helloworld_sub', # 节点的可执行文件名
+#        ),
+#    ])
